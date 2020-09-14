@@ -12,9 +12,4 @@ if($conn === false){
   die("Could not connect!" . $conn->connect_error);
 }
 
-
-
-
-
-$conn
  ?>
