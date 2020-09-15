@@ -45,10 +45,9 @@
 
   <div class="form-group col-md-3">
 <button type="button" name="add" class="btn btn-outline-success mx-3 px-4" id="add"> Add</button>
- <button type="button" name="add" class="btn btn-outline-danger" href="javascript:void(0)" id="cancel"> Cancel</button>
+ <button type="button" name="add" class="btn btn-outline-danger" href="javascript:void(0);" id="cancel"
+ onclick="$('#link_add').slideUp(500); $('#show_add').show(500);"> Cancel</button>
  </div>
-
-
 </div>
 
         </div>

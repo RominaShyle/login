@@ -11,6 +11,7 @@ $result = $conn->query("SELECT * FROM `books` ORDER BY id");
     <th>ID</th>
     <th>Title</th>
     <th>Author</th>
+      <th>Publisher</th>
     <th>Action</th>
   </tr>
 
@@ -24,6 +25,7 @@ if($result->num_rows > 0){
     <tr>
     <td>'.$row["id"] .'</td>
     <td>'.$row["title"] .'</td>
+        <td>'.$row["publisher"] .'</td>
     <td>'.$row["author"] .'</td>
     <td><button id = "'.$row["id"] .'" class = "edit btn btn-info"> Edit </button>
     <button class= "del btn btn-danger" id="'.$row["id"].'"> Delete </button>
@@ -41,6 +43,7 @@ if($result->num_rows > 0){
 
 $('.del').click(function(){
 var id = $(this).attr('id');
+
 $.ajax({
 url: 'delete.php',
 type: 'post',
