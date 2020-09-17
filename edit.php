@@ -22,16 +22,16 @@ while($row = $result->fetch_assoc()){
 <div class="form-inline" id="edit-data">
 
   <div class="form-group col-md-3">
-    <input type="text" name="title" value="<?php echo $row['title'];?>" placeholder="Title" class="form-control" required>
+    <input type="text" name="title" id="title" value="<?php echo $row['title'];?>" placeholder="Title" class="form-control" required>
 
   </div>
 
   <div class="form-group col-md-3">
-    <input type="text" name="author" value="<?php echo $row['author'];?>" placeholder="Author" class="form-control" required>
+    <input type="text" name="author" id="author" value="<?php echo $row['author'];?>" placeholder="Author" class="form-control" required>
 
   </div>
   <div class="form-group col-md-3">
-    <input type="text" name="publisher" value="<?php echo $row['publisher'];?>" placeholder="Publisher" class="form-control" required>
+    <input type="text" name="publisher" id="publisher" value="<?php echo $row['publisher'];?>" placeholder="Publisher" class="form-control" required>
 
   </div>
 
@@ -44,7 +44,40 @@ while($row = $result->fetch_assoc()){
 
 <?php
 }
-
-
-
  ?>
+
+ <script type="text/javascript">
+
+ $('.update').click(function (){
+
+   var id = $(this).attr('id');
+
+   var author = $('#author').val();
+   var title = $('#title').val();
+   var publisher = $('#publisher').val();
+
+
+$.ajax({
+
+  url: "update.php",
+  type: "post",
+  data: {id: id, author:author , title:title, publisher:publisher},
+  success : function(data, status, xhr){
+$('#author').val('');
+$('#title').val('');
+$('#publisher').val('');
+$('#records_content').fadeOut(1100).html(data);
+$.get("view.php", function(html){
+
+  $('#table_content').html(html);
+})
+$('#records_content').fadeOut(1100).html(data);
+},
+complete: function(){
+  $('#link_add').hide();
+  $('#show_add').show(750);
+}
+})
+ })
+
+ </script>
