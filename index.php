@@ -30,21 +30,21 @@
 <div class="form-inline" id="link_add">
 
   <div class="form-group col-md-3">
-    <input type="text" name="title" value="" placeholder="Title" class="form-control" required>
+    <input type="text" name="title" value="" id="title" placeholder="Title" class="form-control" required>
 
   </div>
 
   <div class="form-group col-md-3">
-    <input type="text" name="author" value="" placeholder="Author" class="form-control" required>
+    <input type="text" name="author" value="" id= "author" placeholder="Author" class="form-control" required>
 
   </div>
   <div class="form-group col-md-3">
-    <input type="text" name="publisher" value="" placeholder="Publisher" class="form-control" required>
+    <input type="text" name="publisher" value="" id="publisher" placeholder="Publisher" class="form-control" required>
 
   </div>
 
   <div class="form-group col-md-3">
-<button type="button" name="add" class="btn btn-outline-success mx-3 px-4" id="add"> Add</button>
+<button type="button" name="add" class="btn btn-outline-success mx-3 px-4" id="add_new"> Add</button>
  <button type="button" name="add" class="btn btn-outline-danger" href="javascript:void(0);" id="cancel"
  onclick="$('#link_add').slideUp(500); $('#show_add').show(500);"> Cancel</button>
  </div>
