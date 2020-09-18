@@ -1,3 +1,6 @@
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
 <img src="images/foto1.png" alt="foto" style="max-width: 35px;">
@@ -28,6 +31,12 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
+<?php if(!empty($_SESSION)): ?>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php"> Log out </a>
+      </li>
+    <?php endif;?>
+
     </ul>
 
   </div>

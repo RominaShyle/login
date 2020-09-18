@@ -1,20 +1,21 @@
-
-
 <?php
 
+session_start();
+
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
+  header('location: index.php');
+  exit;
+}
+
 require_once "includes/db.php";
-/*
 
-echo "<pre>";
-var_dump($_POST);
-echo "<pre>";
-
-*/
 
 $email_err = $password_err = '';
 $email = $password = '';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+
 
   if(empty(trim($_POST['email']))){
 
@@ -87,6 +88,7 @@ if($stmt->fetch()){
 
 
 }
+
  ?>
 
 
